@@ -13,9 +13,9 @@ public class MyPanel extends JPanel implements ActionListener
     JLabel label_dpm = new JLabel("학과");
     JLabel label_adr = new JLabel("주소");
     JLabel label_grade = new JLabel("학년");
-    JTextField tf1 = new JTextField("홍길동", 25);
-    JTextField tf2 = new JTextField("글로벌소프트웨어학과", 25);
-    JTextField tf3 = new JTextField("아산시", 25);
+    JTextField tf_name = new JTextField("홍길동", 25);
+    JTextField tf_dpm = new JTextField("글로벌소프트웨어학과", 25);
+    JTextField tf_adr = new JTextField("아산시", 25);
     JTextArea result = new JTextArea(10, 30);
     JButton add = new JButton("추가");
     JButton clear = new JButton("Clear");
@@ -25,20 +25,20 @@ public class MyPanel extends JPanel implements ActionListener
     public MyPanel()
     {
         this.add(label_name);
-        this.add(tf1);
+        this.add(tf_name);
         this.add(label_dpm);
-        this.add(tf2);
+        this.add(tf_dpm);
         this.add(label_adr);
-        this.add(tf3);
+        this.add(tf_adr);
         this.add(label_grade);
         this.add(gradeList);
         this.add(add);
         this.add(clear);
         this.add(new JScrollPane(result));
         
-        tf1.addActionListener(this);
-        tf2.addActionListener(this);
-        tf3.addActionListener(this);
+        tf_name.addActionListener(this);
+        tf_dpm.addActionListener(this);
+        tf_adr.addActionListener(this);
         add.addActionListener(this);
         clear.addActionListener(new ActionListener()
         {
@@ -55,10 +55,10 @@ public class MyPanel extends JPanel implements ActionListener
         String grade = gradeList.getSelectedItem().toString();
         if(add.getText().equals("추가"))
         {
-            result.append(label_name.getText() + " : " + tf1.getText() + "\n"
-            + label_dpm.getText() + " : " + tf2.getText() + "\n"
+            result.append(label_name.getText() + " : " + tf_name.getText() + "\n"
+            + label_dpm.getText() + " : " + tf_dpm.getText() + "\n"
             + label_grade.getText() + " : " + grade + "\n"
-            + label_adr.getText()  + " : " + tf3.getText() +
+            + label_adr.getText()  + " : " + tf_adr.getText() +
             "\n------------------------------------------\n");
         }
     }
