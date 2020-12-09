@@ -1,0 +1,77 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+/**
+ * Write a description of class MyPanel here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class MyPanel extends JPanel implements ActionListener
+{
+    JLabel Lname = new JLabel("이름");
+    JLabel Ldepartment = new JLabel("학과");
+    JLabel Laddress = new JLabel("주소");
+    JLabel Lgrade = new JLabel("학년");
+    
+    JTextField Tname= new JTextField("홍길동", 25);
+    JTextField Tdepartment= new JTextField("글로벌소프트웨어학과", 25);
+    JTextField Taddress= new JTextField("아산시..", 25);
+
+    
+    String [] grade = {"1학년", "2학년", "3학년", "4학년"};
+    JComboBox<String> gradeCombo = new JComboBox<String>();
+ 
+    JButton plus = new JButton("추가");
+    JButton clear = new JButton("Clear");
+    
+    JTextArea result = new JTextArea(10,20);
+    public MyPanel()
+    { 
+        for(int i= 0; i<grade.length; i++)
+        { gradeCombo.addItem(grade[i]);}
+        this.add(Lname); 
+        this.add(Tname);
+        
+        this.add(Ldepartment);
+        this.add(Tdepartment);
+        
+        this.add(Laddress);
+        this.add(Taddress);
+        
+        this.add(gradeCombo);
+        this.add(plus);
+        this.add(clear);
+        
+        this.add(result); 
+        this.add(new JScrollPane(result));    
+        
+ 
+        plus.addActionListener(this);
+        clear.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) 
+            {result.setText("");}});
+    }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+        //combo box 
+        //JComboBox<String> cb = (JComboBox<String>)e.getSource();
+        //int index = cb.getSelectedIndex();
+        String comboSelect = gradeCombo.getSelectedItem().toString();
+        
+        String name = Tname.getText(); 
+        String department = Tdepartment.getText();
+        String address = Taddress.getText(); 
+        
+        
+        result.append(
+        Lname + ": " + name + "\n" +
+        Ldepartment + ":" + department + "\n"+
+        Lgrade + ":" + comboSelect +" \n" +
+        Laddress + ":" + address +"\n" +
+        "------------------------");
+
+    }
+ 
+}
