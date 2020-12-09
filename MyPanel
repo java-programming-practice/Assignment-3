@@ -16,7 +16,7 @@ public class MyPanel extends JPanel implements ActionListener
     JTextField tf1 = new JTextField("홍길동", 25);
     JTextField tf2 = new JTextField("글로벌소프트웨어학과", 25);
     JTextField tf3 = new JTextField("아산시", 25);
-    JTextArea result = new JTextArea(15, 30);
+    JTextArea result = new JTextArea(10, 30);
     JButton add = new JButton("추가");
     JButton clear = new JButton("Clear");
         
