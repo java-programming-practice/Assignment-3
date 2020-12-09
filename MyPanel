@@ -31,7 +31,7 @@ public class MyPanel extends JPanel implements ActionListener
         this.add(label_adr);
         this.add(tf3);
         this.add(label_grade);
-        this.add(new JScrollPane(gradeList));
+        this.add(gradeList);
         this.add(add);
         this.add(clear);
         this.add(new JScrollPane(result));
