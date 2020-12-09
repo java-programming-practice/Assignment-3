@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+/**
+ * 과제#3 - MyPanel 클래스
+ * 
+ * @author (2019315027 최서연, 2019315036 허다희) 
+ * @version (2020. 12. 09)
+ */
+public class MyPanel extends JPanel implements ActionListener
+{
+    JLabel label_name = new JLabel("이름");
+    JLabel label_dpm = new JLabel("학과");
+    JLabel label_adr = new JLabel("주소");
+    JLabel label_grade = new JLabel("학년");
+    JTextField tf1 = new JTextField("", 25);
+    JTextField tf2 = new JTextField("", 25);
+    JTextField tf3 = new JTextField("", 25);
+    JTextArea result = new JTextArea(15, 30);
+    JButton add = new JButton("추가");
+    JButton clear = new JButton("Clear");
+        
+    String [] grades = {"1학년", "2학년", "3학년", "4학년"};
+    JComboBox <String> gradeList = new JComboBox<String>(grades);
+    public MyPanel()
+    {
+        this.add(label_name);
+        this.add(tf1);
+        this.add(label_dpm);
+        this.add(tf2);
+        this.add(label_adr);
+        this.add(tf3);
+        this.add(label_grade);
+        this.add(new JScrollPane(gradeList));
+        this.add(add);
+        this.add(clear);
+        this.add(new JScrollPane(result));
+        
+        tf1.addActionListener(this);
+        tf2.addActionListener(this);
+        tf3.addActionListener(this);
+        add.addActionListener(this);
+        clear.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e) 
+            {
+                result.setText("");
+            }
+        }
+        );
+    }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+        String grade = gradeList.getSelectedItem().toString();
+        if(add.getText().equals("추가"))
+        {
+            result.append(label_name.getText() + " : " + tf1.getText() + "\n"
+            + label_dpm.getText() + " : " + tf2.getText() + "\n"
+            + label_grade.getText() + " : " + grade + "\n"
+            + label_adr.getText()  + " : " + tf3.getText() +
+            "\n------------------------------------------\n");
+        }
+    }
+}
