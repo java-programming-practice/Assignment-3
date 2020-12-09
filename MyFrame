@@ -1,0 +1,19 @@
+import javax.swing.*;
+/**
+ * 과제#3 - MyFrame 클래스
+ * 
+ * @author (2019315027 최서연, 2019315036 허다희) 
+ * @version (2020. 12. 09)
+ */
+public class TextFieldFrame extends JFrame
+{
+    public TextFieldFrame()
+    {
+        this.setTitle("과제#3(2019315027 최서연, 2019315036 허다희)");
+        this.setSize(320, 400);
+        JPanel mp = new MyPanel();
+        this.add(mp);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+    }
+}
