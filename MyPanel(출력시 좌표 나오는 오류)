@@ -53,11 +53,9 @@ public class MyPanel extends JPanel implements ActionListener
             {result.setText("");}});
     }
     
-    public void actionPerformed(ActionEvent e)
+   public void actionPerformed(ActionEvent e)
     {
-        //combo box 
-        //JComboBox<String> cb = (JComboBox<String>)e.getSource();
-        //int index = cb.getSelectedIndex();
+       
         String comboSelect = gradeCombo.getSelectedItem().toString();
         
         String name = Tname.getText(); 
@@ -66,10 +64,10 @@ public class MyPanel extends JPanel implements ActionListener
         
         
         result.append(
-        Lname + ": " + name + "\n" +
-        Ldepartment + ":" + department + "\n"+
-        Lgrade + ":" + comboSelect +" \n" +
-        Laddress + ":" + address +"\n" +
+        Lname.getText() + ": " + name + "\n" +
+        Ldepartment.getText() + ":" + department + "\n"+
+        Lgrade.getText() + ":" + comboSelect +" \n" +
+        Laddress.getText() + ":" + address +"\n" +
         "------------------------");
 
     }
