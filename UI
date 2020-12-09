@@ -1,0 +1,52 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+/**
+ * Write a description of class MyPanel here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class MyPanel extends JPanel
+{
+    JLabel Lname = new JLabel("이름");
+    JLabel Ldepartment = new JLabel("학과");
+    JLabel Laddress = new JLabel("주소");
+    JLabel Lgrade = new JLabel("학년");
+    
+    JTextField Tname= new JTextField(25);
+    JTextField Tdepartment= new JTextField(25);
+    JTextField Taddress= new JTextField(25);
+
+    
+    String [] grade = {"1학년", "2학년", "3학년", "4학년"};
+    JComboBox<String> gradeCombo = new JComboBox<String>();
+ 
+    JButton plus = new JButton("추가");
+    JButton clear = new JButton("Clear");
+    
+    JTextArea result = new JTextArea(10,20);
+    JScrollPane scroll = new JScrollPane(result);
+    public MyPanel()
+    { 
+        for(int i= 0; i<grade.length; i++)
+        { gradeCombo.addItem(grade[i]);}
+        this.add(Lname); 
+        this.add(Tname);
+        
+        this.add(Ldepartment);
+        this.add(Tdepartment);
+        
+        this.add(Laddress);
+        this.add(Taddress);
+        
+        this.add(gradeCombo);
+        this.add(plus);
+        this.add(clear);
+        
+        this.add(result); 
+        this.add(new JScrollPane(result));
+        
+    }
+
+}
